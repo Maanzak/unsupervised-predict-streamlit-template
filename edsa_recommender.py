@@ -27,13 +27,10 @@
 """
 # Streamlit dependencies
 import streamlit as st
-import joblib,os
 
 # Data handling dependencies
 import pandas as pd
 import numpy as np
-from PIL import Image
-import string 
 
 # Custom Libraries
 from utils.data_loader import load_movie_titles
@@ -45,13 +42,18 @@ title_list = load_movie_titles('resources/data/movies.csv')
 
 # App declaration
 def main():
+
+    # DO NOT REMOVE the 'Recommender System' option below, however,
+    # you are welcome to add more options to enrich your app.
+    page_options = ["Recommender System","Solution Overview"]
+
     """Movie Recommender App with Streamlit """
-    st.sidebar.markdown('ReelInsights is an app that helps people find movies they like from old favourates to new discovers')
+    st.sidebar.markdown('Welcome to ReelInsights, where you can discover new movies from old favourates!')
     st.sidebar.markdown('    ')
 
     # DO NOT REMOVE the 'Recommender System' option below, however,
     # you are welcome to add more options to enrich your app.
-    page_options = ["Home page","Explore the Data","User login","Recommender System","Ratings","Solution Overview", "Meet the Team", "Contact Us"]
+    page_options = ["Home page","Recommender System","Solution Overview","Explore the Data","User login and Authentication","Ratings","Meet the Team", "Contact Us"]
 
     # -------------------------------------------------------------------
     # ----------- !! THIS CODE MUST NOT BE ALTERED !! -------------------
@@ -108,20 +110,28 @@ def main():
     # ------------- SAFE FOR ALTERING/EXTENSION -------------------
     if page_selection == "Solution Overview":
         st.title("Solution Overview")
-        st.write("Describe your winning approach on this page")
+        #st.write("Describe your winning approach on this page")
+        st.markdown("Our movie recommender system is designed to provide personalized movie recommendations based on user preferences and behavior.")
+        st.markdown("We implemented both collaborative filtering and content-based filtering algorithms that considers user ratings and similarities between users. This approach allows us to recommend movies that similar users have enjoyed.")
+        st.markdown("Our recommender system utilizes a dataset consisting of ratings, movies, and other relevant features. The data is sourced from Kaggle.")
+        st.markdown("To enhance recommendation quality, we applied feature engineering techniques, including [mention any specific techniques]. This ensures that our model performs well even with incomplete or noisy data.")
+        st.markdown("Users can easily interact with the recommender system through a user-friendly interface. They can rate movies, view personalized recommendations, and explore trending or popular movies.")
+        st.markdown("We evaluate our recommender system using mean squared error. This metric helps us measure the accuracy and effectiveness of our recommendations.")
+
 
     # You may want to add more sections here for aspects such as an EDA,
     # or to provide your business pitch.
+
     # Building our the "Home" page
-    if page_selection == "Home Page":
-        st.title("Movie Recommender System")
-        st.write("Welcome")
+    if page_selection == "Home page":
+        #st.title("Movie Recommender System")
+        st.title("Welcome To ReelInsights")
         st.image('resources/imgs/Image_header.png',use_column_width=True)
         st.subheader("  ")
 
     # Bulding our the "Explore the Data" page
     if page_selection == "Explore the Data":
-        st.title("Movie Recommeder System")
+        st.title("Movie Recommender System")
         st.subheader ("**Exploratory Data Analysis**")
         st.markdown("**The distribution of ratings in the dataset")
         st.markdown("This visual displays ratings given by users to movies lies in between 0.5 to 5 with a high proportion of the movies have been rated 3, 3.5 or 4 by the users. The distribution of ratings look a bit left skewed as large proportion of ratings is in between 3 to 5.")
@@ -133,12 +143,27 @@ def main():
         st.markdown("")
 
     # Bulding our the "User login" page
-    if page_selection == "User login":
-        st.title("Movie Recommender System")
+    if page_selection == "User login and Authentication":
+        st.title("User login and Authentication")
+        st.subheader("**User Authentication:**")
+        st.markdown("Our movie recommender system provides a secure authentication process for users. Users can log in using their credentials or choose alternative methods like social media logins.")
+        st.subheader("**Account Creation:**")
+        st.markdown("To create an account, users need to provide a valid email address, username, and a secure password. After account creation, users may receive an email for account verification.")
+        st.subheader("**Password Security:**")
+        st.markdown("We take password security seriously. Passwords are hashed and stored securely to protect user accounts. We recommend users choose strong passwords for added security.")
+        st.subheader("**User Profiles:**")
+        st.markdown("Users have the ability to customize their profiles, update preferences, and view their movie watch history. Personalization is a key aspect of our recommender system.")
+        st.subheader("**Forgot Password:**")
+        st.markdown("In case users forget their passwords, they can securely reset them by following the \"Forgot Password\" link. A password reset link will be sent to the user's registered email address.")
+        st.subheader("**Persistent Login:**")
+        st.markdown("For user convenience, we offer a \"Remember Me\" option during login, allowing users to persistently stay logged in across sessions.")
+        st.subheader("**User Session Management:**")
+        st.markdown("User sessions are carefully managed with session timeouts to enhance security. Users are automatically logged out after a period of inactivity to prevent unauthorized access.")
+        
 
     # Bulding our the "Meet the Team" page
     if page_selection == "Meet the Team":
-        st.title("Movie Recommender System")
+        st.title("Meet the Team")
         st.markdown(" * **Fabian Dafat** : Team Lead  ")
         st.markdown(" * **Tshiamo Malebo** : Project manager ")
         st.markdown(" * **Desiree Malebana** : ML Engineer ")
@@ -148,7 +173,7 @@ def main():
 
     # Bulding our the "Contact Us" page
     if page_selection == "Contact Us":
-        st.markdown('Contact Us')
+        st.title('Contact Us')
         st.markdown(' * Tel: 012 6730 391')
         st.markdown('* Twitter: @ReelInsights')
         st.markdown('* Instagram: @ReelInsights')
@@ -157,6 +182,5 @@ def main():
 
 
         
-
 if __name__ == '__main__':
     main()
