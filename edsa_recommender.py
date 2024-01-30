@@ -48,6 +48,7 @@ def main():
     page_options = ["Recommender System","Solution Overview"]
 
     """Movie Recommender App with Streamlit """
+    st.sidebar.image('resources/imgs/ReelInsights logo.jpeg', use_column_width=True)
     st.sidebar.markdown('Welcome to ReelInsights, your go-to destination for discovering fresh cinematic gems inspired by your all-time favorites!')
     st.sidebar.markdown('    ')
 
@@ -121,13 +122,14 @@ def main():
 
     # You may want to add more sections here for aspects such as an EDA,
     # or to provide your business pitch.
-
+    
     # Building our the "Home" page
     if page_selection == "Home page":
         #st.title("Movie Recommender System")
         st.title("Welcome To ReelInsights")
-        st.image('resources/imgs/Image_header.png',use_column_width=True)
-        st.subheader("  ")
+        st.markdown("***ReelInsights: Elevating Your Movie Experience Beyond Imagination!***")
+        st.image('resources/imgs/possible homapage.jpg',width= 350,use_column_width=True)
+        
 
     # Bulding our the "Explore the Data" page
     if page_selection == "Explore the Data":
@@ -159,27 +161,29 @@ def main():
         st.markdown("For user convenience, we offer a \"Remember Me\" option during login, allowing users to persistently stay logged in across sessions.")
         st.subheader("**User Session Management:**")
         st.markdown("User sessions are carefully managed with session timeouts to enhance security. Users are automatically logged out after a period of inactivity to prevent unauthorized access.")
-        
+
 
     # Bulding our the "Meet the Team" page
     if page_selection == "Meet the Team":
         st.title("Meet the Team")
         st.markdown(" * **Fabian Dafat** : Team Lead  ")
         st.markdown(" * **Tshiamo Malebo** : Project manager ")
+        st.image('resources/imgs/Desiree.jpeg',width= 250,use_column_width=False)
         st.markdown(" * **Desiree Malebana** : ML Engineer ")
-        st.markdown(" * **Boitumelo Lefophana** :  Full Stack Data Analyst  ")
+        st.image('resources/imgs/Boitumelo.jpeg',width= 250,use_column_width=False)
+        st.markdown(" * **Boitumelo Lefophana** :  Full Stack Data Analyst")
         st.markdown(" * **Victoria Mohale** : Data scientist  ")
         st.markdown(" * **Maria Boysen** : Business Analysit  ")
 
     # Bulding our the "Contact Us" page
     if page_selection == "Contact Us":
         st.title('Contact Us')
-        st.markdown(' * Tel: 012 6730 391')
+        st.markdown('* Tel: 012 6730 391')
+        st.markdown('* LinkedIn: ReelInsight')
         st.markdown('* Twitter: @ReelInsights')
         st.markdown('* Instagram: @ReelInsights')
-        st.markdown('* Address: ')
-        st.markdown(' 11 Adriana Cres, Rooihuiskraal, Centurion, 0154')
-
+        st.markdown('* Address: 11 Adriana Cres, Rooihuiskraal, Centurion, 0154')
+        
 
         
 if __name__ == '__main__':
