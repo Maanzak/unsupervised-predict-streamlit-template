@@ -48,7 +48,7 @@ def main():
     page_options = ["Recommender System","Solution Overview"]
 
     """Movie Recommender App with Streamlit """
-    st.sidebar.markdown('Welcome to ReelInsights, where you can discover new movies from old favourates!')
+    st.sidebar.markdown('Welcome to ReelInsights, your go-to destination for discovering fresh cinematic gems inspired by your all-time favorites!')
     st.sidebar.markdown('    ')
 
     # DO NOT REMOVE the 'Recommender System' option below, however,
