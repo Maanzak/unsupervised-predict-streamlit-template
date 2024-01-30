@@ -135,13 +135,17 @@ def main():
     if page_selection == "Explore the Data":
         st.title("Movie Recommender System")
         st.subheader ("**Exploratory Data Analysis**")
-        st.markdown("**The distribution of ratings in the dataset")
+        st.markdown("**The distribution of ratings in the dataset**")
+        st.image('resources/imgs/Distribution of ratings.PNG',width= 250,use_column_width=True)
         st.markdown("This visual displays ratings given by users to movies lies in between 0.5 to 5 with a high proportion of the movies have been rated 3, 3.5 or 4 by the users. The distribution of ratings look a bit left skewed as large proportion of ratings is in between 3 to 5.")
         st.markdown("**Distribution of Genres in the dataset**")
+        st.image('resources/imgs/Distribution of genres.PNG',width= 250,use_column_width=True)
         st.markdown("There are 19 different genres of movies including Drama, Comedy, Action and Thriller being the top 4 genres of movies present in the dataset and many others.")
-        st.markdown("**Average ratings by 15 top users**")
+        st.markdown("**Average ratings by 10 top users**")
+        st.image('resources/imgs/Average rating by top 10 users.PNG',width= 250,use_column_width=True)
         st.markdown("")
-        st.markdown("**Number of top 15 rated movies**")
+        st.markdown("**Number of top 10 rated movies**")
+        st.image('resources/imgs/Number of rating for top 10 movies.PNG',width= 250,use_column_width=True)
         st.markdown("")
 
     # Bulding our the "User login" page
@@ -167,6 +171,7 @@ def main():
     if page_selection == "Meet the Team":
         st.title("Meet the Team")
         st.markdown(" * **Fabian Dafat** : Team Lead  ")
+        st.image('resources/imgs/Tshiamo.jpeg',width= 250,use_column_width=False)
         st.markdown(" * **Tshiamo Malebo** : Project manager ")
         st.image('resources/imgs/Desiree.jpeg',width= 250,use_column_width=False)
         st.markdown(" * **Desiree Malebana** : ML Engineer ")
