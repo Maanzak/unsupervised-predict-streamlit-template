@@ -143,6 +143,9 @@ def main():
         st.markdown(" * **Tshiamo Malebo** : Project manager ")
         st.markdown(" * **Desiree Malebana** : ML Engineer ")
         st.markdown(" * **Boitumelo Lefophana** :  Full Stack Data Analyst  ")
+        st.image('resources/imgs/Boitumelo.jpeg',width= 250,use_column_width=False)
+        st.markdown(" * **Boitumelo Lefophana** :  Full Stack Data Analyst")
+        st.image('resources/imgs/Lesiba.jpeg',width= 250,use_column_width=False)
         st.markdown(" * **Victoria Mohale** : Data scientist  ")
         st.markdown(" * **Maria Boysen** : Business Analysit  ")
 
