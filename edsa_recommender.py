@@ -47,7 +47,7 @@ def main():
     # you are welcome to add more options to enrich your app.
     page_options = ["Recommender System","Solution Overview"]
 
-    """Movie Recommender App with Streamlit """
+    #"""Movie Recommender App with Streamlit """
     st.sidebar.image('resources/imgs/ReelInsights logo.jpeg', use_column_width=True)
     st.sidebar.markdown('Welcome to ReelInsights, your go-to destination for discovering fresh cinematic gems inspired by your all-time favorites!')
     st.sidebar.markdown('    ')
@@ -170,15 +170,16 @@ def main():
     # Bulding our the "Meet the Team" page
     if page_selection == "Meet the Team":
         st.title("Meet the Team")
-        st.markdown(" * **Fabian Dafat** : Team Lead  ")
-        st.image('resources/imgs/Tshiamo.jpeg',width= 250,use_column_width=False)
-        st.markdown(" * **Tshiamo Malebo** : Project manager ")
-        st.image('resources/imgs/Desiree.jpeg',width= 250,use_column_width=False)
-        st.markdown(" * **Desiree Malebana** : ML Engineer ")
-        st.image('resources/imgs/Boitumelo.jpeg',width= 250,use_column_width=False)
-        st.markdown(" * **Boitumelo Lefophana** :  Full Stack Data Analyst")
-        st.markdown(" * **Victoria Mohale** : Data scientist  ")
-        st.markdown(" * **Maria Boysen** : Business Analysit  ")
+        st.image('resources/imgs/Meet the team.PNG',width= 250,use_column_width=True)
+        #st.markdown(" * **Fabian Dafat** : Team Lead  ")
+        #st.image('resources/imgs/Tshiamo.jpeg',width= 250,use_column_width=False)
+        #st.markdown(" * **Tshiamo Malebo** : Project manager ")
+        #st.image('resources/imgs/Desiree.jpeg',width= 250,use_column_width=False)
+        #st.markdown(" * **Desiree Malebana** : ML Engineer ")
+        #st.image('resources/imgs/Boitumelo.jpeg',width= 250,use_column_width=False)
+        #st.markdown(" * **Boitumelo Lefophana** :  Full Stack Data Analyst")
+        #st.markdown(" * **Victoria Mohale** : Data scientist  ")
+        #st.markdown(" * **Maria Boysen** : Business Analysit  ")
 
     # Bulding our the "Contact Us" page
     if page_selection == "Contact Us":
