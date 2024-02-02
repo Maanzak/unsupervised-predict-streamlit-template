@@ -184,6 +184,7 @@ def main():
     # Bulding our the "Contact Us" page
     if page_selection == "Contact Us":
         st.title('Contact Us')
+        st.image('resources/imgs/Contact us - Copy.webp',width= 250,use_column_width=False)
         st.markdown('* Tel: 012 6730 391')
         st.markdown('* LinkedIn: ReelInsight')
         st.markdown('* Twitter: @ReelInsights')
