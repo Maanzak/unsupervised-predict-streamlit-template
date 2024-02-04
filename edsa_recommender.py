@@ -148,23 +148,6 @@ def main():
         st.image('resources/imgs/Number of rating for top 10 movies.PNG',width= 250,use_column_width=True)
         st.markdown("")
 
-    # Bulding our the "User login" page
-    if page_selection == "User login and Authentication":
-        st.title("User login and Authentication")
-        st.subheader("**User Authentication:**")
-        st.markdown("Our movie recommender system provides a secure authentication process for users. Users can log in using their credentials or choose alternative methods like social media logins.")
-        st.subheader("**Account Creation:**")
-        st.markdown("To create an account, users need to provide a valid email address, username, and a secure password. After account creation, users may receive an email for account verification.")
-        st.subheader("**Password Security:**")
-        st.markdown("We take password security seriously. Passwords are hashed and stored securely to protect user accounts. We recommend users choose strong passwords for added security.")
-        st.subheader("**User Profiles:**")
-        st.markdown("Users have the ability to customize their profiles, update preferences, and view their movie watch history. Personalization is a key aspect of our recommender system.")
-        st.subheader("**Forgot Password:**")
-        st.markdown("In case users forget their passwords, they can securely reset them by following the \"Forgot Password\" link. A password reset link will be sent to the user's registered email address.")
-        st.subheader("**Persistent Login:**")
-        st.markdown("For user convenience, we offer a \"Remember Me\" option during login, allowing users to persistently stay logged in across sessions.")
-        st.subheader("**User Session Management:**")
-        st.markdown("User sessions are carefully managed with session timeouts to enhance security. Users are automatically logged out after a period of inactivity to prevent unauthorized access.")
 
 
     # Bulding our the "Meet the Team" page
