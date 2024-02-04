@@ -153,19 +153,21 @@ def main():
     # Bulding our the "Meet the Team" page
     if page_selection == "Meet the Team":
         st.title("Meet the Team")
-        st.markdown(" * **Fabian Dafat** : Team Lead  ")
-        st.image('resources/imgs/Tshiamo.jpeg',width= 250,use_column_width=False)
-        st.markdown(" * **Tshiamo Malebo** : Project manager ")
-        st.image('resources/imgs/Desiree.jpeg',width= 250,use_column_width=False)
-        st.markdown(" * **Desiree Malebana** : ML Engineer ")
-        st.image('resources/imgs/Boitumelo.jpeg',width= 250,use_column_width=False)
-        st.markdown(" * **Boitumelo Lefophana** :  Full Stack Data Analyst")
-        st.markdown(" * **Victoria Mohale** : Data scientist  ")
-        st.markdown(" * **Maria Boysen** : Business Analysit  ")
+        st.image('resources/imgs/Meet the team.PNG',width= 250,use_column_width=True)
+        #st.markdown(" * **Fabian Dafat** : Team Lead  ")
+        #st.image('resources/imgs/Tshiamo.jpeg',width= 250,use_column_width=False)
+        #st.markdown(" * **Tshiamo Malebo** : Project manager ")
+        #st.image('resources/imgs/Desiree.jpeg',width= 250,use_column_width=False)
+        #st.markdown(" * **Desiree Malebana** : ML Engineer ")
+        #st.image('resources/imgs/Boitumelo.jpeg',width= 250,use_column_width=False)
+        #st.markdown(" * **Boitumelo Lefophana** :  Full Stack Data Analyst")
+        #st.markdown(" * **Victoria Mohale** : Data scientist  ")
+        #st.markdown(" * **Maria Boysen** : Business Analysit  ")
 
     # Bulding our the "Contact Us" page
     if page_selection == "Contact Us":
         st.title('Contact Us')
+        st.image('resources/imgs/Contact us - Copy - Copy.webp',width= 250,use_column_width=False)
         st.markdown('* Tel: 012 6730 391')
         st.markdown('* LinkedIn: ReelInsight')
         st.markdown('* Twitter: @ReelInsights')
