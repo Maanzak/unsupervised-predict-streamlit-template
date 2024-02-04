@@ -54,7 +54,7 @@ def main():
 
     # DO NOT REMOVE the 'Recommender System' option below, however,
     # you are welcome to add more options to enrich your app.
-    page_options = ["Home page","Recommender System","Solution Overview","Explore the Data","Meet the Team", "Contact Us"]
+    page_options = ["Home page","Choosing Recommendations: Explained", "Recommender System","Solution Overview","Explore the Data","Meet the Team", "Contact Us"]
 
     # -------------------------------------------------------------------
     # ----------- !! THIS CODE MUST NOT BE ALTERED !! -------------------
@@ -173,7 +173,27 @@ def main():
         st.markdown('* Twitter: @ReelInsights')
         st.markdown('* Instagram: @ReelInsights')
         st.markdown('* Address: 11 Adriana Cres, Rooihuiskraal, Centurion, 0154')
-        
+
+    #Building our the "Choosing Recommendations: Explained" page
+    if page_selection == "Choosing Recommendations: Explained":
+        st.title("Choosing Recommendations: Explained")
+        st.image('resources/imgs/contentVScollab2.png',width= 250,use_column_width=False)
+        st.markdown("Collaborative Filtering and Content-Based Filtering are two techniques used in our movie recommender system to provide personalized suggestions.")
+        st.markdown("Understanding their differences is key to optimizing your movie-watching experience.")
+        st.markdown("**Collaborative Filtering**")
+        st.markdown("Idea: Recommends movies based on the preferences of users with similar tastes.")
+        st.markdown("Types:")
+        st.markdown("User-Based: Recommends movies liked by similar users.")
+        st.markdown("Item-Based: Recommends movies similar to those a user has liked.")
+        st.markdown("Strengths: Effective for dynamic user preferences and diverse user bases.")
+        st.markdown("**Content-Based Filtering**")
+        st.markdown("Idea: Recommends movies based on their features (genres, actors, etc.) and user preferences for those features.")
+        st.markdown("Profiles: Each movie and user has a profile based on features.")
+        st.markdown("Strengths: Effective when rich item metadata is available, good for new users.")
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+
 
         
 if __name__ == '__main__':
