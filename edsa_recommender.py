@@ -54,7 +54,7 @@ def main():
 
     # DO NOT REMOVE the 'Recommender System' option below, however,
     # you are welcome to add more options to enrich your app.
-    page_options = ["Home page","Recommender System","Solution Overview","Explore the Data","User login and Authentication","Ratings","Meet the Team", "Contact Us"]
+    page_options = ["Home page","Recommender System","Solution Overview","Explore the Data","Meet the Team", "Contact Us"]
 
     # -------------------------------------------------------------------
     # ----------- !! THIS CODE MUST NOT BE ALTERED !! -------------------
