@@ -54,7 +54,7 @@ def main():
 
     # DO NOT REMOVE the 'Recommender System' option below, however,
     # you are welcome to add more options to enrich your app.
-    page_options = ["Home page","Choosing Recommendations: Explained", "Recommender System","Solution Overview","Explore the Data","Meet the Team", "Contact Us"]
+    page_options = ["Home page","Choosing Recommendations: Explained", "Project summary", "Recommender System","Solution Overview","Explore the Data","Meet the Team", "Contact Us"]
 
     # -------------------------------------------------------------------
     # ----------- !! THIS CODE MUST NOT BE ALTERED !! -------------------
@@ -129,6 +129,13 @@ def main():
         st.title("Welcome To ReelInsights")
         st.markdown("***ReelInsights: Elevating Your Movie Experience Beyond Imagination!***")
         st.image('resources/imgs/possible homapage.jpg',width= 350,use_column_width=True)
+
+    # Building our "Project Summary" page
+    if page_selection == "Project summary":
+       st.title("Project summary")
+       st.image('resources/imgs/contentVScollab2.png', width= 250, use_column_width=True) 
+       st.markdown('Our client *Netflix* is a subscription-based streaming service available in over 190 countries with over 200 billion subscribers worldwide. It provides a wide variety of TV shows, movies, documentaries, and original content across various genres. Netflix is known for its user-friendly interface and for producing original quality content. Due to the streaming landscape becoming increasingly competitive with the emergence of new platforms, Netflix is looking for a new movie recommender system to assit in the need to continually attract and retain subscribers.')
+       st.markdown('Wise Analytics was tasked to delevop a movie recommender system called ReelInsights that will enable Netflix to retain and attract new subscribers by analyzing user preferences, viewing history, and movie ratings to offer personalized movie suggestions. This enhances user satisfaction by helping them discover content that aligns with their tastes and  increases engagement, longer viewing sessions, and higher retention rates for Netflix')
         
 
     # Bulding our the "Explore the Data" page
