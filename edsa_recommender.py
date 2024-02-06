@@ -115,8 +115,8 @@ def main():
         st.image('resources/imgs/contentVScollab2.png', width= 250, use_column_width=True)
         st.markdown("We developed our recommendation system with a strong emphasis on user-friendliness, aiming to provide an optimal user experience. Our goal is to expose users to both familiar and new content. This unique approach ensures that our Recommender System not only attracts more customers due to its user-friendly design but also promotes customer retention. This in turn leads to increased subscription rates as users seek the best movie recommendations, ultimately leading to higher profitability for the company.")
         st.markdown("Moreover, our system will put Netflix at the forefront of the competition among platforms with similar content as it is specifically designed for personalized movie recommendations based on user preferences and behavior, our movie recommender system incorporates collaborative filtering and content-based filtering algorithms, considering user ratings and similarities between users.")
-        st.markdown("To further improve recommendation quality, we implemented feature engineering techniques, including [mention any specific techniques], these strategies guarantee a great model performance.")
-        st.markdown("We further evaluated our recommender system using mean squared error. This metric helps us measure the accuracy and effectiveness of our recommendations.")
+        st.markdown("To further improve recommendation quality, we implemented feature engineering techniques including merging data sets, determining the average ratings and top users, amongst others these strategies guarantee a great model performance.")
+        st.markdown("We further evaluated our recommender system using RMSE score which was 0.82 for our top perfoming model which is SVD model. This metric helps us measure the accuracy and effectiveness of our recommendations.")
 
 
     # You may want to add more sections here for aspects such as an EDA,
