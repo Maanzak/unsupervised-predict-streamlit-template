@@ -145,13 +145,13 @@ def main():
         st.image('resources/imgs/Distribution of ratings.PNG',width= 250,use_column_width=True)
         st.markdown("This visual displays ratings given by users to movies lies in between 0.5 to 5 with a high proportion of the movies have been rated 3 or 4 by the users. The distribution of ratings look a bit left skewed as large proportion of ratings is in between 3 to 5.")
         st.markdown("**Distribution of Genres in the dataset**")
-        st.image('resources/imgs/Distribution of genres.PNG',width= 250,use_column_width=True)
+        st.image('resources/imgs/distribution of genres.JPG',width= 250,use_column_width=True)
         st.markdown("There are 19 different genres of movies including Drama, Comedy, Action and Thriller being the top 4 genres of movies present in the dataset and many others.")
         st.markdown("**Average ratings by 10 top users**")
-        st.image('resources/imgs/Average rating by top 10 users.PNG',width= 250,use_column_width=True)
+        st.image('resources/imgs/top 10 user rating.JPG',width= 250,use_column_width=True)
         st.markdown("")
-        st.markdown("**Number of top 10 rated movies**")
-        st.image('resources/imgs/Number of rating for top 10 movies.PNG',width= 250,use_column_width=True)
+        st.markdown("**Yearly ratings**")
+        st.image('resources/imgs/yearly total ratings.JPG',width= 250,use_column_width=True)
         st.markdown("")
 
 
