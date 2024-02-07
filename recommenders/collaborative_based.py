@@ -48,7 +48,7 @@ ratings_df.drop(['timestamp'], axis=1,inplace=True)
 ratings = ratings_df.merge(movies_df[['movieId', 'title']], on='movieId')
 
 # We make use of an SVD model trained on a subset of the MovieLens 10k dataset.
-model=pickle.load(open('resources/models/SVD.pkl', 'rb'))
+model=pickle.load(open('resources/models/Train_NM2.pkl', 'rb'))
 
 def prediction_item(item_id):
     """Map a given favourite movie to users within the
@@ -179,7 +179,7 @@ def collab_model(movie_list,top_n=10):
     score_series_3 = pd.Series(rank_3).sort_values(ascending = False)
 
      # Appending the names of movies
-    listings = score_series_1.append(score_series_1).append(score_series_3).sort_values(ascending = False)
+    listings = score_series_1.append(score_series_1).append(score_series_2).append(score_series_3).sort_values(ascending = False)
 
     #Getting titles of recommedned movies
     recommended_movies = []
