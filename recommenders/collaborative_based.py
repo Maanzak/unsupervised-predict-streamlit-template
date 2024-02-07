@@ -30,12 +30,14 @@
 # Script dependencies
 import pandas as pd
 import numpy as np
+import scipy as sp
 import pickle
 import copy
 from surprise import Reader, Dataset
 from surprise import SVD, NormalPredictor, BaselineOnly, KNNBasic, NMF
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
+import pathlib
 
 # Importing data
 movies_df = pd.read_csv('resources/data/movies.csv',sep = ',')
@@ -131,7 +133,7 @@ def collab_model(movie_list,top_n=10):
 
     #Getting movie IDs and their ratings for all top users
     df_init_users = ratings_df[ratings_df['userId']==movie_ids[0]]
-    for i in movie_ids :
+    for i in user_ids :
         df_init_users=df_init_users.append(ratings_df[ratings_df['userId']==i])
     
     #Including predictions for chosen movies
@@ -146,8 +148,10 @@ def collab_model(movie_list,top_n=10):
     df_init_users.drop_duplicates(inplace=True)  
 
     # Creating pivot tables
-    util_matrix = df_init_users.pivot_table(index=['userId'], columns=['movieId'], values='rating').fillna(0)
+    util_matrix = df_init_users.pivot_table(index=['userId'], columns=['movieId'], values='rating')
 
+    # Filling Nan values with 0's and save the utility matrix in scipy's sparse matrix format
+    util_matrix.fillna(0, inplace=True)
     util_matrix_sparse = sp.sparse.csr_matrix(util_matrix.values)
 
     # Computing the similarity matrix using cosine similarity matrix
@@ -174,25 +178,24 @@ def collab_model(movie_list,top_n=10):
     rank_2 = user_sim_df[idx_2]
     rank_3 = user_sim_df[idx_3]
     # Calculating the scores
-    score_series_1 = pd.Series(rank_1).sort_values(ascending = False)
-    score_series_2 = pd.Series(rank_2).sort_values(ascending = False)
-    score_series_3 = pd.Series(rank_3).sort_values(ascending = False)
+    sim_score_1 = pd.Series(rank_1).sort_values(ascending = False)
+    sim_score_2= pd.Series(rank_2).sort_values(ascending = False)
+    sim_score_3 = pd.Series(rank_3).sort_values(ascending = False)
 
      # Appending the names of movies
-    listings = score_series_1.append(score_series_1).append(score_series_2).append(score_series_3).sort_values(ascending = False)
-
-    #Getting titles of recommedned movies
-    recommended_movies = []
+    sim_score_list = sim_score_1.append(sim_score_2).append(sim_score_3).sort_values(ascending = False)
 
     # Choose top 50
-    top_50_indexes = list(listings.iloc[1:50].index)
+    top_50_indexes = list(sim_score_list.iloc[1:50].index)
 
     # Removing chosen movies
-    top_indexes = np.setdiff1d(top_50_indexes,[idx_1,idx_2,idx_3])
+    indexes = np.setdiff1d(top_50_indexes,[idx_1,idx_2,idx_3])
 
-    for i in top_indexes[:top_n]:
-        recommended_movies.append(list(movies_df[movies_df['movieId']==i][title]))
+     # Get titles of recommended movies
+    recommended_movies = []
+    for i in indexes[:top_n]:
+        recommended_movies.append(list(movies_df[movies_df['movieId']==i]['title']))
 
-    # Return a list of the recommended movies
-    recommended_movies = [val for sublist in recommended_movies for val in sublist]    
+    # Returning a list of movies
+    recommended_movies = [val for sublist in recommended_movies for val in sublist]
     return recommended_movies
