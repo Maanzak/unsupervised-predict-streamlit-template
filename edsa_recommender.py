@@ -149,6 +149,7 @@ def main():
         st.markdown("There are 19 different genres of movies including Drama, Comedy, Action and Thriller being the top 4 genres of movies present in the dataset and many others.")
         st.markdown("**Yearly ratings**")
         st.image('resources/imgs/yearly total ratings.JPG',width= 250,use_column_width=True)
+        st.markdown('There is a decrease in the number of ratings post 2004, this could be due to the fact that subscribers are not getting recommended new movies to watch')
         st.markdown("")
 
 
